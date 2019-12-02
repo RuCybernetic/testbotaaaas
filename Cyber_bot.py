@@ -12,7 +12,7 @@ async def on_connect():
     
 @client.event
 async def on_member_join(member):
-    id1 = int(os.environ.get('yastrebs'))
+    id1 = os.environ.get(int('yastrebs'))
     id2 = os.environ.get('LA')
     if member.guild.id == id1:
         role = discord.utils.get(member.guild.roles, name='new role')
