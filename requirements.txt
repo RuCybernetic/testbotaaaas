@@ -6,3 +6,4 @@ chardet
 PyNaCl
 opuslib
 ffmpeg
+youtube_dl
