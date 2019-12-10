@@ -63,5 +63,8 @@ async def call(ctx):
 async def join(ctx):
 	channel = ctx.author.voice.channel.id
 	await client.get_channel(int(channel)).connect()
-
+@client.command()
+async def leave(ctx):
+	if client.VoiceClient.is_connected:
+	await client.VoiceClient.disconnect()
 client.run(TOKEN)
