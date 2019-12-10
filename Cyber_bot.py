@@ -34,22 +34,18 @@ async def on_connect():
     
 @client.event
 async def on_member_join(member):
-    id1 = int('634235156713963551')
-    id2 = int('639461753041846316')
-    if member.guild.id == id1:
-        role = discord.utils.get(member.guild.roles, name='new role')
-        await member.add_roles(role)
-    elif member.guild.id == id2:
-        role = discord.utils.get(member.guild.roles, name='гость')
+    id = 647290681320013825
+    if member.guild.id == id:
+        role = discord.utils.get(member.guild.roles, name='Гость')
         await member.add_roles(role)
     else:
         pass
 
-@client.command(pass_context=True,aliases=['привет'])
+@client.command(aliases=['привет'])
 async def hello(ctx):
     await ctx.send('Привет {}'.format(ctx.message.author.mention))
 
-@client.command(pass_context=True)
+@client.command()
 @commands.has_permissions(administrator = True)
 async def clear(ctx, amount: int):
     await ctx.message.delete()
