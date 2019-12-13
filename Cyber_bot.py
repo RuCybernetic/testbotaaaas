@@ -42,7 +42,7 @@ async def on_member_join(member):
         pass
 @client.event
 async def on_raw_reaction_add(payload):
-    if payload.message_id != 654382178003583007:
+    if payload.message_id != 654933197586694156:
         return
     if str(payload.emoji) == "<:LoL:654146562468872214>":
         role = client.get_guild(payload.guild_id).get_role(653834600602402827)
@@ -59,7 +59,7 @@ async def on_raw_reaction_add(payload):
 
 @client.event
 async def on_raw_reaction_remove(payload):
-    if payload.message_id != 654382178003583007:
+    if payload.message_id != 654933197586694156:
         return
     if str(payload.emoji) == "<:LoL:654146562468872214>":
         role = client.get_guild(payload.guild_id).get_role(653834600602402827)
