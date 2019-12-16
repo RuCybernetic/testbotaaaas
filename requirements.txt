@@ -8,3 +8,4 @@ opuslib
 ffmpeg
 youtube_dl
 jishaku
+SymPy
