@@ -32,7 +32,12 @@ client.load_extension("jishaku")
 async def on_connect():
     print(f'{client.user} в сети!')
     print('Bot работает.')
-    
+   
+@client.event
+async def on_ready():
+    game = discord.Game("Python 3")
+    await client.change_presence(status=discord.Status.idle, activity=game)
+
 @client.event
 async def on_member_join(member):
     id = 647290681320013825
