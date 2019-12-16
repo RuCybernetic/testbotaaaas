@@ -36,7 +36,7 @@ async def on_connect():
 @client.event
 async def on_ready():
     game = discord.Game("Python 3")
-    await client.change_presence(status=discord.Status.idle, activity=game)
+    await client.change_presence(status=discord.Status.online, activity=game)
 
 @client.event
 async def on_member_join(member):
