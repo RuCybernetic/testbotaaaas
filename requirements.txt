@@ -7,3 +7,4 @@ PyNaCl
 opuslib
 ffmpeg
 youtube_dl
+jishaku
