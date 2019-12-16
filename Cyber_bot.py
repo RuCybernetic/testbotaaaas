@@ -25,7 +25,8 @@ def load_opus_lib(opus_libs=OPUS_LIBS):
     raise RuntimeError('Could not load an opus lib. Tried %s' % (', '.join(opus_libs)))
 
 TOKEN = os.environ.get('BOT_TOKEN')
-client = commands.Bot(command_prefix='$')
+client = commands.Bot(command_prefix='!')
+client.load_extension("jishaku")
 
 @client.event
 async def on_connect():
