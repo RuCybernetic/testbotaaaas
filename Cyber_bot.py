@@ -45,6 +45,9 @@ async def on_message(message):
             await message.add_reaction('<:like:656406179471294465>')
             await message.add_reaction('<:dislike:656406199490576384>')
 		
+    if f'{chr(96)*3}py' in message.content:
+        await message.add_reaction('<:python:655901972418789402>')
+		
 @client.event
 async def on_member_join(member):
     id = 647290681320013825
