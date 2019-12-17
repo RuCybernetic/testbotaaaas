@@ -49,7 +49,7 @@ async def on_message(message):
         await message.add_reaction('<:python:655901972418789402>')
 	
     if not message.author.bot:
-        await Bot.process_commands(message)
+        await client.process_commands(message)
 		
 @client.event
 async def on_member_join(member):
