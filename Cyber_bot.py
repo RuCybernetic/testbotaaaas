@@ -47,6 +47,9 @@ async def on_message(message):
 		
     if f'{chr(96)*3}py' in message.content:
         await message.add_reaction('<:python:655901972418789402>')
+	
+    if not message.author.bot:
+        await Bot.process_commands(message)
 		
 @client.event
 async def on_member_join(member):
