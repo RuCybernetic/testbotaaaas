@@ -37,7 +37,14 @@ async def on_connect():
 async def on_ready():
     game = discord.Game("Python 3")
     await client.change_presence(status=discord.Status.online, activity=game)
-
+	
+@client.event
+async def on_message(message):
+    for attachment in message.attachments:
+        if attachment.filename.endswith(('.bmp', '.jpeg', '.jpg', '.png', '.gif')):
+            await message.add_reaction('<:like:656406179471294465>')
+            await message.add_reaction('<:dislike:656406199490576384>')
+		
 @client.event
 async def on_member_join(member):
     id = 647290681320013825
