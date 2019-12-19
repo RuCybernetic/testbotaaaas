@@ -58,11 +58,6 @@ async def on_member_join(member):
     if member.guild.id == id:
         role = discord.utils.get(member.guild.roles, name='Гость')
         await member.add_roles(role)
-	a = ('присаживайся и наслаждайся', 'зови своих друзей', 'пиши если чо')
-	channel = client.get_channel(647293816730288128)
-	em = discord.Embed(description=f'{member.mention}, {random.choice(a)}', color= 0x00b820)
-	em.set_author(name ='Добро пожаловать на сервер')
-	await channel.send(embed=em)
     else:
         pass
 @client.event
