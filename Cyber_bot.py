@@ -127,4 +127,18 @@ async def join(ctx):
 async def leave(ctx):
     await ctx.voice_client.disconnect()
 
+@client.command()
+async def info(ctx, member:discord.Member=None):
+    if not member:
+        return await ctx.send('Ты не указал пользователя...')
+    emb = discord.Embed(title='**Информация о {}**'.format(member), color =discord.Color(random.randint(0x000000, 0xFFFFFF)))
+    emb.add_field(name='Никнейм:', value = member.name)
+    emb.add_field(name='Присоединился к серверу:', value= str(member.joined_at)[:16])
+    emb.add_field(name='Присоединился к дискорду:', value= str(member.created_at)[:16])
+    emb.add_field(name='ID пользователя:', value=member.id)
+    if member.activities is not None:
+    	emb.add_field(name='Играет в:', value= member.activity)
+    emb.set_thumbnail(url=member.avatar_url)
+    await ctx.send(embed=emb)
+
 client.run(TOKEN)
